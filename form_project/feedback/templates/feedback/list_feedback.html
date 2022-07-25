@@ -1,0 +1,11 @@
+{% extends 'feedback/base.html' %}
+
+{% block title %} Cписок всех отзывов {% endblock %}
+
+{% block content %}
+    <ol>
+     {% for feedback in feedback %}
+            <li>{{ feedback }}</li>
+            {% endfor %}
+    </ol>
+{% endblock %}

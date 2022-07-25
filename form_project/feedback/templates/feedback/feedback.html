@@ -1,10 +1,9 @@
 {% extends 'feedback/base.html' %}
 {% load static %}
 
-<title>  {% block title %} Страница отзывов {% endblock %}  </title>
-    <link rel="stylesheet" href="{% static 'feedback/forms.css' %}">
+{% block title %} Страница отзывов {% endblock %}
+
 {% block content %}
-<body>
     <h2>Оставьте отзыв</h2>
     <form method="post">
         {% csrf_token %}
@@ -12,14 +11,13 @@
             <div class="form-style {% if field.errors %}
                                     errors
                                    {% endif %}">
-            {{ field.label_tag }}
-            {{ field.errors }}
-            {{ field }}
+                {{ field.label_tag }}
+                {{ field.errors }}
+                {{ field }}
             </div>
             <br>
         {% endfor %}
         <button>Отправить</button>
         <button type="reset">Сброс</button>
     </form>
-</body>
 {% endblock %}
