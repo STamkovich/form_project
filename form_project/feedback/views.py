@@ -63,10 +63,12 @@ class ListFeedBack(ListView):
         return filter_qs
 
 
+# логика при помощи класса DetailView
 class DetailFeedBack(DetailView):
     template_name = 'feedback/detail_feedback.html'
     model = Feedback
     context_object_name = 'feedback'
+
 
 # логика при помощи класса UpdateView
 class FeedBackUpdateView(UpdateView):
@@ -74,6 +76,7 @@ class FeedBackUpdateView(UpdateView):
     form_class = FeedbackForm
     template_name = 'feedback/feedback.html'
     success_url = '/done'
+
 
 # логика при помощи класса View
 # class FeedBackUpdateView(View):
